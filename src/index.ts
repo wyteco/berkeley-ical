@@ -2,6 +2,8 @@ import fs from 'fs';
 import { Command } from 'commander';
 import figlet from 'figlet';
 import { z } from 'zod';
+//
+import { fetchAndParseCourseData } from './parse';
 
 // ----------------------------------------------------------------------
 
@@ -80,6 +82,9 @@ const validatedUrls = programArguments.map((argument) => {
 /**
  * TODO: Fetch and parse the course data from the provided URLs.
  */
+const courses = Promise.all(
+  validatedUrls.map((url) => fetchAndParseCourseData(url))
+).then((courses) => console.log(JSON.stringify(courses, null, 2)));
 
 // ----------------------------------------------------------------------
 /**
