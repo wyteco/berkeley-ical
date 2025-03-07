@@ -9,7 +9,13 @@
   "scripts": {
     "build": "npx tsc"
   },
+  "dependencies": {
+    "commander": "^13.1.0",
+    "figlet": "^1.8.0",
+    "zod": "^3.24.2"
+  },
   "devDependencies": {
+    "@types/figlet": "^1.7.0",
     "@types/node": "^22.13.9",
     "typescript": "^5.8.2"
   }
