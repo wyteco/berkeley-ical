@@ -1,19 +1,31 @@
 name: 'Publish to NPM'
-on: push
+on:
+  push:
+    # Ensure it only runs on push to main.
+    branches:
+      - main
+      # Only trigger for version tags (v1.0.0, v1.1.0, etc.).
+    tags:
+      - 'v*'
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout the files
         uses: actions/checkout@v4
-      - name: node
+
+      - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          registry-url: https://registry.npmjs.org
-      - name: build
+
+      - name: Install the dependencies
+        run: yarn install
+
+      - name: Build the project
         run: yarn build
-      - name: publish
+
+      - name: Publish to NPM
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
