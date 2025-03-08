@@ -1,14 +1,27 @@
 {
-  "name": "berkeley-ical",
+  "name": "@wyteco/berkeley-ical",
   "version": "1.0.0",
   "description": "A command line tool to easily export your classes from the Berkeley Academic Guide to your calendar in iCal (.ics) format. Without having a student account lol!",
-  "main": "src/index.ts",
-  "repository": "git@github.com:wyteco/berkeley-ical.git",
+  "main": "dist/index.js",
+  "bin": {
+    "berkeley-ical": "./dist/index.js"
+  },
+  "repository": "https://github.com/wyteco/berkeley-ical",
+  "homepage": "https://github.com/wyteco/berkeley-ical#readme",
   "author": "Oscar Stahlberg",
-  "private": true,
+  "license": "MIT",
   "scripts": {
+    "start": "yarn build && node dist/index.js https://classes.berkeley.edu/content/2025-spring-compsci-c280-001-lec-001",
     "build": "npx tsc"
   },
+  "keywords": [
+    "cli",
+    "calendar",
+    "ics",
+    "ical",
+    "berkeley",
+    "berkeley academic guide"
+  ],
   "dependencies": {
     "axios": "^1.8.2",
     "cheerio": "^1.0.0",
