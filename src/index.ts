@@ -3,6 +3,7 @@ import { Command } from 'commander';
 import figlet from 'figlet';
 import { z } from 'zod';
 //
+import { generateIcsEvent } from './ics';
 import { fetchAndParseCourseData } from './parse';
 
 // ----------------------------------------------------------------------
@@ -19,7 +20,7 @@ program
   .option(
     '-o, --output <path>',
     'Specify output path for the .ics file (default: current directory)',
-    './'
+    '.'
   )
   .arguments('<urls...>')
   .action((urls) => {
@@ -42,7 +43,7 @@ console.log('arguments', programArguments);
 // ----------------------------------------------------------------------
 /**
  * Validate the output path provided by the user.
- * Note that the default output path is the current directory `./`.
+ * Note that the default output path is the current directory `.`.
  */
 if (!fs.existsSync(programOptions.output)) {
   console.log(
@@ -79,19 +80,46 @@ const validatedUrls = programArguments.map((argument) => {
 });
 
 // ----------------------------------------------------------------------
-/**
- * TODO: Fetch and parse the course data from the provided URLs.
- */
-const courses = Promise.all(
-  validatedUrls.map((url) => fetchAndParseCourseData(url))
-).then((courses) => console.log(JSON.stringify(courses, null, 2)));
 
-// ----------------------------------------------------------------------
-/**
- * TODO: Generate the iCal (.ics) file from the parsed course data.
- */
+const run = async () => {
+  /**
+   * Fetch and parse the course data from the provided URLs.
+   */
+  const courses = await Promise.all(
+    validatedUrls.map((url) => fetchAndParseCourseData(url))
+  );
 
-// ----------------------------------------------------------------------
-/**
- * TODO: Write the iCal (.ics) file to the output path.
- */
+  console.log(courses);
+
+  // ----------------------------------------------------------------------
+  /**
+   * TODO: Generate the iCal (.ics) file from the parsed course data.
+   */
+  const icsEventStrings = courses.map((course) => {
+    if (!course) {
+      console.error('Some courses could not be parsed.');
+      process.exit(1);
+    }
+
+    return generateIcsEvent(course);
+  });
+
+  const icsFileString = `BEGIN:VCALENDAR\nVERSION:2.0\n${icsEventStrings.join(
+    '\n'
+  )}\nEND:VCALENDAR`;
+
+  // ----------------------------------------------------------------------
+  /**
+   * TODO: Write the iCal (.ics) file to the output path.
+   */
+  const icsFilePath = `${validatedOutputPath}/berkeley-classes.ics`;
+
+  fs.writeFileSync(icsFilePath, icsFileString);
+
+  console.log(`iCal file generated at ${icsFilePath}.`);
+  console.log('Done!');
+
+  process.exit(0);
+};
+
+run();

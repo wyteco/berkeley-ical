@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20250122T140000
+DTEND;TZID=America/Los_Angeles:20250122T152900
+RRULE:FREQ=WEEKLY;BYDAY=MO,WE;UNTIL=20250509T000000Z
+SUMMARY:Computer Vision
+LOCATION:Berkeley Way West 1102
+DESCRIPTION:Instructors: Jitendra Malik, Angjoo Kanazawa\nCapacity: 63\nEnrollments: 74\n\nParadigms for computational vision. Relation to human visual perception. Mathematical techniques for representing and reasoning, with curves, surfaces and volumes. Illumination and reflectance models. Color perception. Image segmentation and aggregation. Methods for bottom-up three dimensional shape recovery: Line drawing analysis, stereo, shading, motion, texture. Use of object models for prediction and recognition.
+END:VEVENT
+END:VCALENDAR
