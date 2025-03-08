@@ -1,9 +1,6 @@
 name: 'Publish to NPM'
 on:
   push:
-    # Ensure it only runs on push to main.
-    branches:
-      - main
     # Only trigger for version tags (v1.0.0, v1.1.0, etc.).
     tags:
       - 'v*'
