@@ -1,6 +1,6 @@
 {
   "name": "@wyteco/berkeley-ical",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A command line tool to easily export your classes from the Berkeley Academic Guide to your calendar in iCal (.ics) format. Without having a student account lol!",
   "main": "dist/index.js",
   "bin": {
