@@ -12,7 +12,8 @@ import { fetchAndParseCourseData } from './parse';
 
 const program = new Command();
 
-console.log(figlet.textSync('Berkeley iCal'), '\n');
+console.log(figlet.textSync('Berkeley iCal'));
+console.log('');
 
 program
   .version('1.0.0')
@@ -39,10 +40,12 @@ const programOptions = program.opts();
 const isVerbose = !!programOptions.verbose;
 if (isVerbose) {
   console.log('Verbose mode enabled.');
+  console.log('');
 }
 
 if (isVerbose) {
   console.log('options', programOptions);
+  console.log('');
 }
 
 /**
@@ -52,6 +55,7 @@ const programArguments = program.args;
 
 if (isVerbose) {
   console.log('arguments', programArguments);
+  console.log('');
 }
 
 // ----------------------------------------------------------------------
@@ -63,6 +67,7 @@ if (!fs.existsSync(programOptions.output)) {
   console.log(
     `Output path does not exist. Creating directory: ${programOptions.output}`
   );
+  console.log('');
   fs.mkdirSync(programOptions.output, { recursive: true });
 }
 
@@ -112,9 +117,11 @@ const run = async () => {
   console.log(
     `There is ${courses.length} course${courses.length === 1 ? '' : 's'}.`
   );
+  console.log('');
 
   if (isVerbose) {
     console.log('courses', courses);
+    console.log('');
   }
 
   // ----------------------------------------------------------------------
