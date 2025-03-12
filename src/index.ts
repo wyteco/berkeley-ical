@@ -157,8 +157,26 @@ const run = async () => {
   // ----------------------------------------------------------------------
   /**
    * Write the iCal (.ics) file to the output path.
+   * We append the current timestamp to the filename to ensure that the program
+   * can be run multiple times without overwriting the existing file.
+   * The timestamp is in the format "YYYY-MM-DDTHH-mm-ss" and generated based on ISO.
    */
-  const icsFilePath = `${validatedOutputPath}/berkeley-classes.ics`;
+  const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  let icsFilePath = `${validatedOutputPath}/berkeley-classes-${timestamp}.ics`;
+
+  /**
+   * This might be overengineering, but we'll add a counter to the filename
+   * if the file already exists. This is to avoid overwriting the existing file.
+   * We could also just throw an error, but this is more user-friendly.
+   */
+  let filePathCounter = 1;
+  while (fs.existsSync(icsFilePath)) {
+    console.log(
+      `The file "${icsFilePath}" already exists. Incrementing the counter to avoid overwriting the existing file...`
+    );
+    icsFilePath = `${validatedOutputPath}/berkeley-classes-${timestamp}-${filePathCounter}.ics`;
+    filePathCounter++;
+  }
 
   fs.writeFileSync(icsFilePath, icsFileString);
 

@@ -22,7 +22,7 @@ DTEND;TZID=America/Los_Angeles:20250122T105900
 RRULE:FREQ=WEEKLY;BYDAY=MO,WE;UNTIL=20250509T000000Z
 SUMMARY:Advanced Topics in Computer Systems
 LOCATION:Soda 310
-DESCRIPTION:Instructors: Ion Stoica\nCapacity: 45\nEnrollments: 36\n\nGraduate survey of systems for managing computation and information, covering a breadth of topics: early systems; volatile memory management, including virtual memory and buffer management; persistent memory systems, including both file systems and transactional storage managers; storage metadata, physical vs. logical naming, schemas, process scheduling, threading and concurrency control; system support for networking, including remote procedure calls, transactional RPC, TCP, and active messages; security infrastructure; extensible systems and APIs; performance analysis and engineering of large software systems. Homework assignments, exam, and term paper or project required.
+DESCRIPTION:Instructors: Ion Stoica\nCapacity: 45\nEnrollments: 37\n\nGraduate survey of systems for managing computation and information, covering a breadth of topics: early systems; volatile memory management, including virtual memory and buffer management; persistent memory systems, including both file systems and transactional storage managers; storage metadata, physical vs. logical naming, schemas, process scheduling, threading and concurrency control; system support for networking, including remote procedure calls, transactional RPC, TCP, and active messages; security infrastructure; extensible systems and APIs; performance analysis and engineering of large software systems. Homework assignments, exam, and term paper or project required.
 END:VEVENT
 BEGIN:VEVENT
 DTSTART;TZID=America/Los_Angeles:20250121T153000
