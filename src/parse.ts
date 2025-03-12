@@ -13,7 +13,7 @@ import { propertyLookup } from './properties';
  */
 export const fetchAndParseCourseData = async (
   url: string
-): Promise<CourseData | null> => {
+): Promise<CourseData> => {
   /**
    * Fetch the HTML content of the provided URL.
    */

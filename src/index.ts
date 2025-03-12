@@ -128,14 +128,7 @@ const run = async () => {
   /**
    * TODO: Generate the iCal (.ics) file from the parsed course data.
    */
-  const icsEventStrings = courses.map((course) => {
-    if (!course) {
-      console.error('Some courses could not be parsed.');
-      process.exit(1);
-    }
-
-    return generateIcsEvent(course);
-  });
+  const icsEventStrings = courses.map((course) => generateIcsEvent(course));
 
   const icsFileString = `BEGIN:VCALENDAR\nVERSION:2.0\n${icsEventStrings.join(
     '\n'
