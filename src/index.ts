@@ -96,12 +96,22 @@ const validatedUrls = programArguments.map((argument) => {
 // ----------------------------------------------------------------------
 
 const run = async () => {
+  console.log('Fetching and parsing course data...');
+  console.log(
+    'This may take a while depending on the number of URLs provided.'
+  );
+
   /**
    * Fetch and parse the course data from the provided URLs.
    */
   const courses = await Promise.all(
     validatedUrls.map((url) => fetchAndParseCourseData(url))
   );
+
+  console.log(
+    `Found ${courses.length} course${courses.length === 1 ? '' : 's'}.`
+  );
+  console.log('Fetched and parsed course data of all the URLs.');
 
   if (isVerbose) {
     console.log('courses', courses);
