@@ -2,6 +2,7 @@
 
 import fs from 'fs';
 import { Command } from 'commander';
+import cliProgress from 'cli-progress';
 import figlet from 'figlet';
 import { z } from 'zod';
 //
@@ -105,14 +106,33 @@ const run = async () => {
   console.log(
     'This may take a while depending on the number of URLs provided.'
   );
+  console.log('');
+
+  const progressBar = new cliProgress.SingleBar(
+    {
+      format: 'Progress [{bar}] {percentage}% | {value}/{total} URLs',
+    },
+    cliProgress.Presets.shades_classic
+  );
+
+  progressBar.start(validatedUrls.length, 0);
 
   /**
    * Fetch and parse the course data from the provided URLs.
    */
   const courses = await Promise.all(
-    validatedUrls.map((url) => fetchAndParseCourseData(url))
+    validatedUrls.map(async (url) => {
+      const course = await fetchAndParseCourseData(url);
+
+      progressBar.increment();
+
+      return course;
+    })
   );
 
+  progressBar.stop();
+
+  console.log('');
   console.log('Fetched and parsed course data of all the URLs.');
   console.log(
     `There is ${courses.length} course${courses.length === 1 ? '' : 's'}.`
