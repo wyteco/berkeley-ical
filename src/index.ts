@@ -65,7 +65,7 @@ if (isVerbose) {
  */
 if (!fs.existsSync(programOptions.output)) {
   console.log(
-    `Output path does not exist. Creating directory: ${programOptions.output}`
+    `Output path does not exist. Creating directory: ${programOptions.output}.`
   );
   console.log('');
   fs.mkdirSync(programOptions.output, { recursive: true });
