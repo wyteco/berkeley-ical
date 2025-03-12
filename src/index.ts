@@ -66,7 +66,7 @@ if (isVerbose) {
  */
 if (!fs.existsSync(programOptions.output)) {
   console.log(
-    `Output path does not exist. Creating directory: ${programOptions.output}.`
+    `Output path does not exist. Creating directory: "${programOptions.output}".`
   );
   console.log('');
   fs.mkdirSync(programOptions.output, { recursive: true });
@@ -162,7 +162,7 @@ const run = async () => {
 
   fs.writeFileSync(icsFilePath, icsFileString);
 
-  console.log(`iCal file generated at ${icsFilePath}.`);
+  console.log(`iCal file generated at "${icsFilePath}".`);
   console.log('Done!');
 
   process.exit(0);
