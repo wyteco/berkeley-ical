@@ -19,6 +19,7 @@ program
   .description(
     'A command line tool to easily export your classes from the Berkeley Academic Guide to your calendar in iCal (.ics) format. Without having a student account lol!'
   )
+  .option('-v, --verbose', 'Enable verbose mode')
   .option(
     '-o, --output <path>',
     'Specify output path for the .ics file (default: current directory)',
@@ -34,13 +35,24 @@ program
  * This stores all the unvalidated options provided by the user.
  */
 const programOptions = program.opts();
-console.log('options', programOptions);
+
+const isVerbose = !!programOptions.verbose;
+if (isVerbose) {
+  console.log('Verbose mode enabled.');
+}
+
+if (isVerbose) {
+  console.log('options', programOptions);
+}
 
 /**
  * This stores all the unvalidated URLs provided by the user.
  */
 const programArguments = program.args;
-console.log('arguments', programArguments);
+
+if (isVerbose) {
+  console.log('arguments', programArguments);
+}
 
 // ----------------------------------------------------------------------
 /**
@@ -91,7 +103,9 @@ const run = async () => {
     validatedUrls.map((url) => fetchAndParseCourseData(url))
   );
 
-  console.log(courses);
+  if (isVerbose) {
+    console.log('courses', courses);
+  }
 
   // ----------------------------------------------------------------------
   /**
