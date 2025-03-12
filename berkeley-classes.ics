@@ -1,11 +1,83 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20250127T160000
+DTEND;TZID=America/Los_Angeles:20250127T175900
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20250509T000000Z
+SUMMARY:Special Topics
+LOCATION:Anthro/Art Practice Bldg 160
+DESCRIPTION:Instructors: Xiaodong Dawn Song\nCapacity: 16\nEnrollments: 100\n\nTopics will vary from semester to semester. See Computer Science Division announcements.
+END:VEVENT
+BEGIN:VEVENT
 DTSTART;TZID=America/Los_Angeles:20250122T140000
 DTEND;TZID=America/Los_Angeles:20250122T152900
 RRULE:FREQ=WEEKLY;BYDAY=MO,WE;UNTIL=20250509T000000Z
 SUMMARY:Computer Vision
 LOCATION:Berkeley Way West 1102
 DESCRIPTION:Instructors: Jitendra Malik, Angjoo Kanazawa\nCapacity: 63\nEnrollments: 74\n\nParadigms for computational vision. Relation to human visual perception. Mathematical techniques for representing and reasoning, with curves, surfaces and volumes. Illumination and reflectance models. Color perception. Image segmentation and aggregation. Methods for bottom-up three dimensional shape recovery: Line drawing analysis, stereo, shading, motion, texture. Use of object models for prediction and recognition.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20250122T093000
+DTEND;TZID=America/Los_Angeles:20250122T105900
+RRULE:FREQ=WEEKLY;BYDAY=MO,WE;UNTIL=20250509T000000Z
+SUMMARY:Advanced Topics in Computer Systems
+LOCATION:Soda 310
+DESCRIPTION:Instructors: Ion Stoica\nCapacity: 45\nEnrollments: 36\n\nGraduate survey of systems for managing computation and information, covering a breadth of topics: early systems; volatile memory management, including virtual memory and buffer management; persistent memory systems, including both file systems and transactional storage managers; storage metadata, physical vs. logical naming, schemas, process scheduling, threading and concurrency control; system support for networking, including remote procedure calls, transactional RPC, TCP, and active messages; security infrastructure; extensible systems and APIs; performance analysis and engineering of large software systems. Homework assignments, exam, and term paper or project required.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20250121T153000
+DTEND;TZID=America/Los_Angeles:20250121T165900
+RRULE:FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20250509T000000Z
+SUMMARY:Special Topics in Public Policy
+LOCATION:GSPP 250
+DESCRIPTION:Instructors: Andrew W Reddie\nCapacity: 86\nEnrollments: 93\n\nCourse examines current problems and issues in the field of public policy. Topics may vary from year to year and will be announced at the beginning of the semester. Open to students from other departments.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20250121T123000
+DTEND;TZID=America/Los_Angeles:20250121T135900
+RRULE:FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20250509T000000Z
+SUMMARY:Special Topics in Marketing
+LOCATION:Cheit C320
+DESCRIPTION:Instructors: William Fanning\nCapacity: 28\nEnrollments: 27\n\nA variety of topics in marketing with emphasis on current problems and research.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20250121T080000
+DTEND;TZID=America/Los_Angeles:20250121T092900
+RRULE:FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20250509T000000Z
+SUMMARY:Marketing
+LOCATION:Chou Hall N270
+DESCRIPTION:Instructors: William Fanning\nCapacity: 53\nEnrollments: 55\n\nThe evolution of markets and marketing; market structure; marketing cost and efficiency; public and private regulation; the development of marketing programs including decisions involving products, price, promotional distribution.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20250122T140000
+DTEND;TZID=America/Los_Angeles:20250122T155900
+RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20250509T000000Z
+SUMMARY:Special Topics in Marketing
+LOCATION:Cheit C210
+DESCRIPTION:Instructors: Rachel M Gershon\nCapacity: 64\nEnrollments: 61\n\nA variety of topics in marketing with emphasis on current problems and research.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20250121T093000
+DTEND;TZID=America/Los_Angeles:20250121T105900
+RRULE:FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20250509T000000Z
+SUMMARY:Special Topics in Information
+LOCATION:Internet/Online
+DESCRIPTION:Instructors: Francis Coyle\nCapacity: 49\nEnrollments: 39\n\nSpecific topics, hours, and credit may vary from section to section, year to year.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20250121T123000
+DTEND;TZID=America/Los_Angeles:20250121T135900
+RRULE:FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20250509T000000Z
+SUMMARY:Introduction to Artificial Intelligence
+LOCATION:Dwinelle 155
+DESCRIPTION:Instructors: John F Canny, Oliver Grillmeyer\nCapacity: 505\nEnrollments: 474\n\nIdeas and techniques underlying the design of intelligent computer systems. Topics include search, game playing, knowledge representation, inference, planning, reasoning under uncertainty, machine learning, robotics, perception, and language understanding.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Los_Angeles:20250123T090000
+DTEND;TZID=America/Los_Angeles:20250123T115900
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20250509T000000Z
+SUMMARY:Product Management
+LOCATION:Jacobs Hall 310
+DESCRIPTION:Instructors: Annegret Cocquyt\nCapacity: 61\nEnrollments: 61\n\nToo often we are enamored in our brilliant ideas, we skip the most important part: building products consumers will want and use. Precious time and effort is wasted on engineering perfect products only to launch to no users.  This course teaches product management skills such as attributes of great product managers, reducing risk and cost while accelerating time to market, product life cycle, stakeholder management and effective development processes.
 END:VEVENT
 END:VCALENDAR

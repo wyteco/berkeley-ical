@@ -14,7 +14,7 @@
   "author": "Oscar Stahlberg",
   "license": "MIT",
   "scripts": {
-    "start": "yarn build && node dist/index.js https://classes.berkeley.edu/content/2025-spring-compsci-c280-001-lec-001",
+    "start": "yarn build && node dist/index.js https://classes.berkeley.edu/content/2025-spring-compsci-294-280-lec-280 https://classes.berkeley.edu/content/2025-spring-compsci-c280-001-lec-001 https://classes.berkeley.edu/content/2025-spring-compsci-262a-001-lec-001 https://classes.berkeley.edu/content/2025-spring-pubpol-190-001-lec-001 https://classes.berkeley.edu/content/2025-spring-ugba-167-001-lec-001 https://classes.berkeley.edu/content/2025-spring-ugba-106-002-lec-002 https://classes.berkeley.edu/content/2025-spring-ugba-167-003-lec-003 https://classes.berkeley.edu/content/2025-spring-info-290-002-lec-002 https://classes.berkeley.edu/content/2025-spring-compsci-188-001-lec-001 https://classes.berkeley.edu/content/2025-spring-engin-183d-001-sem-001",
     "build": "npx tsc"
   },
   "keywords": [
