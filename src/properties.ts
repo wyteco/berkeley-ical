@@ -45,7 +45,7 @@ export const propertyLookup: {
 
       if (!startDateText) {
         console.warn(
-          `Invalid date range string: ${textValue}. No start date found. Trying to parse as a single date.`
+          `Invalid date range string: "${textValue}". No start date found. Trying to parse as a single date.`
         );
 
         return parseDateString(textValue);
@@ -61,7 +61,7 @@ export const propertyLookup: {
 
       if (!endDateText) {
         console.warn(
-          `Invalid date range string: ${textValue}. No end date found. Using null as end date.`
+          `Invalid date range string: "${textValue}". No end date found. Using null as end date.`
         );
 
         return null;
@@ -81,7 +81,7 @@ export const propertyLookup: {
           ?.at(0) as Weekday;
 
         if (!weekday) {
-          throw new Error(`Invalid weekday: ${day.trim()}`);
+          throw new Error(`Invalid weekday: "${day.trim()}"`);
         }
 
         return weekday;
@@ -94,7 +94,7 @@ export const propertyLookup: {
       const startTime = textValue.split('-').at(0)?.trim();
 
       if (!startTime) {
-        throw new Error(`Invalid time range string: ${textValue}`);
+        throw new Error(`Invalid time range string: "${textValue}"`);
       }
 
       return parseTimeString(startTime);
@@ -107,7 +107,7 @@ export const propertyLookup: {
 
       if (!endTime) {
         console.warn(
-          `Invalid time range string: ${textValue}. No end time found. Using null as end time.`
+          `Invalid time range string: "${textValue}". No end time found. Using null as end time.`
         );
 
         return null;
@@ -126,7 +126,7 @@ export const propertyLookup: {
       const numberOfEnrollments = textValue.match(/\d+/)?.[0];
 
       if (!numberOfEnrollments) {
-        throw new Error(`Invalid number of enrollments string: ${textValue}`);
+        throw new Error(`Invalid number of enrollments string: "${textValue}"`);
       }
 
       return parseInt(numberOfEnrollments, 10);
@@ -138,7 +138,7 @@ export const propertyLookup: {
       const capacity = textValue.match(/\d+/)?.[0];
 
       if (!capacity) {
-        throw new Error(`Invalid capacity string: ${textValue}`);
+        throw new Error(`Invalid capacity string: "${textValue}"`);
       }
 
       return parseInt(capacity, 10);
