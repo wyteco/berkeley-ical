@@ -12,7 +12,7 @@ import { fetchAndParseCourseData } from './parse';
 
 const program = new Command();
 
-console.log(figlet.textSync('Berkeley iCal'));
+console.log(figlet.textSync('Berkeley iCal'), '\n');
 
 program
   .version('1.0.0')
