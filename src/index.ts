@@ -108,10 +108,10 @@ const run = async () => {
     validatedUrls.map((url) => fetchAndParseCourseData(url))
   );
 
-  console.log(
-    `Found ${courses.length} course${courses.length === 1 ? '' : 's'}.`
-  );
   console.log('Fetched and parsed course data of all the URLs.');
+  console.log(
+    `There is ${courses.length} course${courses.length === 1 ? '' : 's'}.`
+  );
 
   if (isVerbose) {
     console.log('courses', courses);
