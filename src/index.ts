@@ -126,7 +126,7 @@ const run = async () => {
 
   // ----------------------------------------------------------------------
   /**
-   * TODO: Generate the iCal (.ics) file from the parsed course data.
+   * Generate the iCal (.ics) file from the parsed course data.
    */
   const icsEventStrings = courses.map((course) => generateIcsEvent(course));
 
@@ -136,7 +136,7 @@ const run = async () => {
 
   // ----------------------------------------------------------------------
   /**
-   * TODO: Write the iCal (.ics) file to the output path.
+   * Write the iCal (.ics) file to the output path.
    */
   const icsFilePath = `${validatedOutputPath}/berkeley-classes.ics`;
 
