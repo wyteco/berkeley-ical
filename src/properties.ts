@@ -44,6 +44,7 @@ export const propertyLookup: {
       const startDateText = textValue.split('-').at(0)?.trim();
 
       if (!startDateText) {
+        console.log('');
         console.warn(
           `Invalid date range string: "${textValue}". No start date found. Trying to parse as a single date.`
         );
@@ -60,6 +61,7 @@ export const propertyLookup: {
       const endDateText = textValue.split('-').at(1)?.trim();
 
       if (!endDateText) {
+        console.log('');
         console.warn(
           `Invalid date range string: "${textValue}". No end date found. Using null as end date.`
         );
@@ -81,6 +83,7 @@ export const propertyLookup: {
           ?.at(0) as Weekday;
 
         if (!weekday) {
+          console.log('');
           throw new Error(`Invalid weekday: "${day.trim()}"`);
         }
 
@@ -94,6 +97,7 @@ export const propertyLookup: {
       const startTime = textValue.split('-').at(0)?.trim();
 
       if (!startTime) {
+        console.log('');
         throw new Error(`Invalid time range string: "${textValue}"`);
       }
 
@@ -106,6 +110,7 @@ export const propertyLookup: {
       const endTime = textValue.split('-').at(1)?.trim();
 
       if (!endTime) {
+        console.log('');
         console.warn(
           `Invalid time range string: "${textValue}". No end time found. Using null as end time.`
         );
@@ -126,6 +131,7 @@ export const propertyLookup: {
       const numberOfEnrollments = textValue.match(/\d+/)?.[0];
 
       if (!numberOfEnrollments) {
+        console.log('');
         throw new Error(`Invalid number of enrollments string: "${textValue}"`);
       }
 
@@ -138,6 +144,7 @@ export const propertyLookup: {
       const capacity = textValue.match(/\d+/)?.[0];
 
       if (!capacity) {
+        console.log('');
         throw new Error(`Invalid capacity string: "${textValue}"`);
       }
 

@@ -10,6 +10,7 @@ export function parseTimeString(timeString: string): Date {
   const parsed = parse(timeString.trim(), 'hh:mm aa', new Date(0));
 
   if (isNaN(parsed.getTime())) {
+    console.log('');
     throw new Error(`Invalid time string: "${timeString}"`);
   }
 
@@ -25,6 +26,7 @@ export function parseDateString(dateString: string): Date {
   const parsed = parse(dateString.trim(), 'MMM d, yyyy', new Date());
 
   if (isNaN(parsed.getTime())) {
+    console.log('');
     throw new Error(`Invalid date string: "${dateString}"`);
   }
 
